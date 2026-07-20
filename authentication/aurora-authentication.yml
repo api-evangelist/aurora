@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://doc.aurora.dev/
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+description: >-
+  Aurora's public JSON-RPC endpoints (mainnet.aurora.dev and testnet.aurora.dev) are open and
+  require no API key or bearer token; access control is performed at the protocol layer by
+  cryptographic signing of transactions with an Ethereum-compatible private key (secp256k1),
+  exactly as on Ethereum. Read (eth_call, eth_getBalance, etc.) calls are unauthenticated; state
+  changes (eth_sendRawTransaction) require a client-signed transaction, not an HTTP credential.
+  Dedicated per-project RPC endpoints provisioned through Aurora Cloud may carry their own API key.
+schemes:
+- name: none-public-rpc
+  type: none
+  in: transaction-signature
+  description: >-
+    No HTTP authentication on shared public endpoints. Write operations are authorized by an
+    secp256k1-signed transaction submitted via eth_sendRawTransaction.
+  sources:
+  - https://mainnet.aurora.dev
+  - https://testnet.aurora.dev
