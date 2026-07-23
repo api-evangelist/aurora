@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: derived
+source: https://doc.aurora.dev/
+notes: >-
+  Standards conformance for the Aurora JSON-RPC API, derived from live probes of the mainnet and
+  testnet endpoints and from Aurora's documented Ethereum compatibility.
+standards:
+- id: json-rpc-2.0
+  conforms: true
+  evidence: eth_chainId probe returned a well-formed JSON-RPC 2.0 result object on mainnet and testnet.
+- id: ethereum-json-rpc
+  conforms: true
+  evidence: Implements the standard eth_* method namespace; eth_chainId returned 0x4e454152 (mainnet) / 0x4e454153 (testnet).
+- id: evm-compatible
+  conforms: true
+  evidence: Aurora Engine implements the Ethereum Virtual Machine as a smart contract on NEAR; full Solidity/EVM bytecode compatibility.
+- id: eip-155-chain-id
+  conforms: true
+  evidence: Distinct chain IDs 1313161554 (mainnet) and 1313161555 (testnet) for replay-protected signing.
+- id: websocket-pubsub
+  conforms: true
+  evidence: eth_subscribe/eth_unsubscribe pub-sub methods documented over WebSocket.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors follow the JSON-RPC 2.0 error object, not RFC 9457 application/problem+json.
+- id: oauth2
+  conforms: false
+  evidence: Public endpoints are unauthenticated; no OAuth surface.

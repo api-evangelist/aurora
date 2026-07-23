@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/aurora-is-near/aurora-cli-rs
+binary: aurora-cli
+description: >-
+  A command-line interface, built in Rust, to bootstrap the Aurora Engine and interact with the
+  Aurora EVM (an Ethereum Virtual Machine running as a smart contract on NEAR). The binary is
+  catalogued in packages/aurora-packages.yml.
+install:
+- method: cargo-git
+  command: cargo install --git https://github.com/aurora-is-near/aurora-cli-rs.git
+command_groups:
+- group: account-and-deployment
+  commands: [create-account, view-account, deploy-aurora, init]
+- group: query
+  commands: [get-chain-id, get-nonce, get-code, get-balance, get-version, get-owner, get-bridge-prover, get-storage-at]
+- group: contract-interaction
+  commands: [deploy, call, view-call, submit]
+- group: upgrade-management
+  commands: [upgrade, stage-upgrade, deploy-upgrade, get-upgrade-index]
+- group: configuration
+  commands: [set-owner, set-fixed-gas, set-whitelist-status, set-silo-params]
+- group: token-operations
+  commands: [get-erc20-from-nep141, mirror-erc20-token, set-erc20-metadata]
+- group: utility
+  commands: [key-pair, encode-address, generate-near-key, transaction-status]

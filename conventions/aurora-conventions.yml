@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://doc.aurora.dev/
+description: >-
+  Cross-cutting request/response semantics for the Aurora JSON-RPC API. Aurora implements the
+  Ethereum JSON-RPC 2.0 contract, so these conventions follow the Ethereum standard rather than a
+  REST convention set.
+protocol:
+  style: json-rpc-2.0
+  transport: [https, websocket]
+  endpoints:
+    mainnet_http: https://mainnet.aurora.dev
+    testnet_http: https://testnet.aurora.dev
+  content_type: application/json
+  method_namespaces: [eth, net, web3, txpool]
+authentication:
+  style: none-public
+  detail: See authentication/aurora-authentication.yml — no HTTP credential on public endpoints.
+request_envelope:
+  fields: [jsonrpc, id, method, params]
+  jsonrpc_version: '2.0'
+  batch: true
+  batch_detail: Multiple calls may be submitted as a JSON array of request objects.
+data_encoding:
+  quantities: hex-encoded with 0x prefix (QUANTITY)
+  data: hex-encoded with 0x prefix (DATA)
+idempotency:
+  supported: false
+  detail: >-
+    No Idempotency-Key header. Read methods are naturally idempotent; write operations
+    (eth_sendRawTransaction) are made replay-safe by the account nonce embedded in the signed
+    transaction, which is the chain-level equivalent of an idempotency key.
+error_envelope:
+  style: json-rpc-2.0-error
+  fields: [code, message, data]
+  detail: See conformance/aurora-conformance.yml for standards conformance.
+pagination:
+  supported: false
+  detail: JSON-RPC methods are single-object or block-range queries (fromBlock/toBlock on eth_getLogs); no cursor/offset pagination.
+subscriptions:
+  supported: true
+  detail: eth_subscribe / eth_unsubscribe over WebSocket for newHeads and logs streams.
+cross_links:
+  authentication: authentication/aurora-authentication.yml
+  conformance: conformance/aurora-conformance.yml
+  lifecycle: lifecycle/aurora-lifecycle.yml

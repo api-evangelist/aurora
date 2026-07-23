@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: https://doc.aurora.dev/
+description: >-
+  Aurora exposes a public testnet that mirrors mainnet for development. Testnet funds are free and
+  obtained from a faucet, so developers can exercise the full JSON-RPC surface and deploy contracts
+  before touching mainnet. There are no secret sandbox API keys — separation is by network/chain-id,
+  not by key prefix.
+networks:
+- mode: test
+  name: Aurora Testnet
+  rpc_http: https://testnet.aurora.dev
+  chain_id: 1313161555
+  chain_id_hex: '0x4e454153'
+  currency: ETH
+  explorer: https://explorer.testnet.aurora.dev/
+  verified: eth_chainId probe returned 0x4e454153 on 2026-07-18
+- mode: live
+  name: Aurora Mainnet
+  rpc_http: https://mainnet.aurora.dev
+  chain_id: 1313161554
+  chain_id_hex: '0x4e454152'
+  currency: ETH
+  explorer: https://explorer.aurora.dev/
+  verified: eth_chainId probe returned 0x4e454152 on 2026-07-18
+test_funds:
+  faucet: true
+  detail: >-
+    Testnet ETH is dispensed from the Aurora faucet (linked from the developer docs). No real value;
+    used to pay gas while testing contract deploys and transactions on chain 1313161555.
+notes: >-
+  Never send real assets to testnet. Bridged testnet assets are for development only. Aurora Cloud
+  Virtual Chains can also be launched in a sandboxed/pre-production configuration.

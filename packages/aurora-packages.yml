@@ -1,0 +1,61 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/aurora-is-near
+notes: >-
+  First-party Aurora libraries. The core engine, engine SDK, and types are published to crates.io
+  from the aurora-is-near/aurora-engine repository; the client-side TypeScript packages are published
+  to npm under the @aurora-is-near scope. Aurora's primary programmatic surface is the
+  Ethereum-compatible JSON-RPC endpoint, so any standards-compliant Web3 client
+  (ethers.js, web3.js, viem, web3.py, etc.) also works against it.
+packages:
+- language: rust
+  registry: crates.io
+  name: aurora-engine-sdk
+  url: https://crates.io/crates/aurora-engine-sdk
+  install: cargo add aurora-engine-sdk
+  version: 2.0.1
+  official: true
+  source: https://github.com/aurora-is-near/aurora-engine
+- language: rust
+  registry: crates.io
+  name: aurora-engine-types
+  url: https://crates.io/crates/aurora-engine-types
+  install: cargo add aurora-engine-types
+  version: 3.0.0
+  official: true
+  source: https://github.com/aurora-is-near/aurora-engine
+- language: javascript
+  registry: npm
+  name: "@aurora-is-near/intents-swap-widget"
+  url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget
+  install: npm install @aurora-is-near/intents-swap-widget
+  official: true
+  description: React components and hooks for building Intents cross-chain swap widgets.
+- language: javascript
+  registry: npm
+  name: "@aurora-is-near/ethereum-wallets"
+  url: https://www.npmjs.com/package/@aurora-is-near/ethereum-wallets
+  install: npm install @aurora-is-near/ethereum-wallets
+  official: true
+  description: Ethereum wallets package for the NEAR Wallet Selector.
+- language: javascript
+  registry: npm
+  name: "@aurora-is-near/openapi-client"
+  url: https://www.npmjs.com/package/@aurora-is-near/openapi-client
+  install: npm install @aurora-is-near/openapi-client
+  official: true
+  description: Type-safe OpenAPI client generator used across Aurora services.
+- language: javascript
+  registry: npm
+  name: "@aurora-is-near/is-banned-near-address"
+  url: https://www.npmjs.com/package/@aurora-is-near/is-banned-near-address
+  install: npm install @aurora-is-near/is-banned-near-address
+  official: true
+  description: Utility to check whether a NEAR address is banned.
+- language: rust
+  registry: git
+  name: aurora-cli-rs
+  url: https://github.com/aurora-is-near/aurora-cli-rs
+  install: cargo install --git https://github.com/aurora-is-near/aurora-cli-rs.git
+  official: true
+  description: Command-line interface (binary aurora-cli) to bootstrap and interact with Aurora Engine.

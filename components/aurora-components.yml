@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/aurora-is-near/intents-swap-widget
+description: >-
+  Client-side, embeddable UI components published by Aurora for building cross-chain (Intents)
+  swap experiences into a web app. Distinct from the server-side SDK crates in packages/.
+families:
+- family: intents-swap-widget
+  description: React components and hooks to embed an Intents cross-chain swap widget into a dApp.
+  loaders:
+  - registry: npm
+    name: "@aurora-is-near/intents-swap-widget"
+    url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget
+  adapters:
+  - registry: npm
+    name: "@aurora-is-near/intents-swap-widget-standalone"
+    url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget-standalone
+    description: Standalone wrapper for the Intents swap widget.
+  - registry: npm
+    name: "@aurora-is-near/intents-swap-widget-evm"
+    url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget-evm
+    description: EVM connector for the Intents swap widget.
+  - registry: npm
+    name: "@aurora-is-near/intents-swap-widget-solana"
+    url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget-solana
+    description: Solana adapter for the Intents swap widget.
+  - registry: npm
+    name: "@aurora-is-near/intents-swap-widget-stellar"
+    url: https://www.npmjs.com/package/@aurora-is-near/intents-swap-widget-stellar
+    description: Stellar connector for the Intents swap widget.

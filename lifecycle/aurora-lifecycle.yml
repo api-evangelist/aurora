@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://doc.aurora.dev/
+versioning:
+  scheme: ethereum-json-rpc
+  detail: >-
+    The JSON-RPC surface tracks the Ethereum standard method set; the underlying Aurora Engine is
+    versioned via GitHub releases (aurora-is-near/aurora-engine) and the engine crates on crates.io
+    (aurora-engine-types 3.0.0, aurora-engine-sdk 2.0.1).
+  engine_releases: https://github.com/aurora-is-near/aurora-engine/releases
+status_page: https://status.aurora.dev/
+sla:
+  url: null
+  detail: No published contractual SLA for the shared public RPC endpoints; uptime is reported on the status page.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No formal deprecation/Sunset (RFC 8594) policy published for the public JSON-RPC endpoints.
+deprecated_operations: []

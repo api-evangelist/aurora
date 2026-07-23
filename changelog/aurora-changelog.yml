@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/aurora-is-near/aurora-engine/releases
+scheme: github-releases
+detail: >-
+  Aurora does not publish a single dated product changelog for the JSON-RPC API; the authoritative
+  change history is the GitHub Releases feed of the aurora-is-near/aurora-engine repository (and the
+  matching aurora-engine-types / aurora-engine-sdk crate versions on crates.io). This pointer
+  references that live feed rather than duplicating full history.
+current_versions:
+  aurora-engine-types: 3.0.0
+  aurora-engine-sdk: 2.0.1
+entries: []
+entries_note: Recent entries are tracked upstream at the GitHub Releases URL above.
