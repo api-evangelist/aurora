@@ -1,22 +1,29 @@
 aid: aurora
+
 name: Aurora
-description: Aurora is an EVM-compatible blockchain platform that lets developers launch fully
-  customizable Virtual Chains running as smart contracts on the NEAR Protocol, pairing full Ethereum
-  tooling compatibility with NEAR's low fees, sub-second block times, and fast finality. Developers
-  integrate with Aurora primarily through its Ethereum-compatible JSON-RPC API (public mainnet and
-  testnet endpoints), the Rainbow Bridge for moving assets between Ethereum, NEAR, and Aurora, block
-  explorers, price oracles, data indexers, and the Aurora Cloud platform for spinning up dedicated
-  virtual chains. Aurora ships open-source Rust engine crates and SDK, a Rust command-line interface,
-  and TypeScript widgets for building intents-based cross-chain swaps.
+
+description: Aurora is an EVM-compatible blockchain platform that lets developers launch fully customizable Virtual Chains running as smart contracts
+  on the NEAR Protocol, pairing full Ethereum tooling compatibility with NEAR's low fees, sub-second block times, and fast finality. Developers
+  integrate with Aurora primarily through its Ethereum-compatible JSON-RPC API (public mainnet and testnet endpoints), the Rainbow Bridge for
+  moving assets between Ethereum, NEAR, and Aurora, block explorers, price oracles, data indexers, and the Aurora Cloud platform for spinning
+  up dedicated virtual chains. Aurora ships open-source Rust engine crates and SDK, a Rust command-line interface, and TypeScript widgets for
+  building intents-based cross-chain swaps.
+
 url: https://raw.githubusercontent.com/api-evangelist/aurora/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - lightspeed-venture-partners
 - pantera-capital
 - softbank-vision-fund
-x-tier: stub
-x-tier-reason: portfolio-lead
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-10-20 (local-v5; was portfolio-lead)
+
 deliveryModel:
   model: library
   open_source: false
@@ -28,6 +35,7 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -40,13 +48,21 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-07-18'
+
 image: https://aurora.dev/favicon.ico
+
 x-docs-platform: docusaurus
+
 x-docs-platform-confidence: medium
+
 x-docs-platform-checked: 2026-09-19
+
 tags:
 - Company
 - Blockchain
@@ -58,30 +74,22 @@ tags:
 - Layer 2
 - Smart Contracts
 - DeFi
-apis:
-- name: Aurora JSON-RPC API
-  description: Ethereum-compatible JSON-RPC 2.0 API for the Aurora EVM network of virtual chains on
-    NEAR. Exposes the standard eth_* method set over HTTPS (and WebSocket subscriptions) on public
-    mainnet and testnet endpoints; no API key is required for the shared public endpoints.
-  humanURL: https://doc.aurora.dev/
-  baseURL: https://mainnet.aurora.dev
-  tags:
-  - Blockchain
-  - EVM
-  - JSON-RPC
-  - Web3
-  - Ethereum
-  properties:
-  - type: Documentation
-    url: https://doc.aurora.dev/
-  - type: GettingStarted
-    url: https://doc.aurora.dev/getting-started/what-is-aurora
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Deprecation
+  url: lifecycle/aurora-lifecycle.yml
+- type: Hosts
+  url: hosts/aurora-hosts.yml
+- type: IntegrationEdges
+  url: integrations/aurora-integration-edges.yml
+- type: Vendors
+  url: vendors/aurora-vendors.yml
 - type: Website
   url: https://aurora.dev/
 - type: Documentation
@@ -98,6 +106,12 @@ common:
   url: https://discord.gg/auroralabs
 - type: StatusPage
   url: https://status.aurora.dev/
+- type: TermsOfService
+  url: https://aurora.dev/terms
+- type: PrivacyPolicy
+  url: https://aurora.dev/privacy
+- type: HelpCenter
+  url: https://help.aurora.dev/
 - type: Explorer
   url: https://explorer.aurora.dev/
 - type: Packages
@@ -128,8 +142,42 @@ common:
   url: security/aurora-vulnerability-disclosure.yml
 - type: Security
   url: security/aurora-vulnerability-disclosure.yml
+
+apis:
+- name: Aurora JSON-RPC API
+  description: Ethereum-compatible JSON-RPC 2.0 API for the Aurora EVM network of virtual chains on NEAR. Exposes the standard eth_* method set
+    over HTTPS (and WebSocket subscriptions) on public mainnet and testnet endpoints; no API key is required for the shared public endpoints.
+  humanURL: https://doc.aurora.dev/
+  baseURL: https://mainnet.aurora.dev
+  tags:
+  - Blockchain
+  - EVM
+  - JSON-RPC
+  - Web3
+  - Ethereum
+  properties:
+  - type: Documentation
+    url: https://doc.aurora.dev/
+  - type: GettingStarted
+    url: https://doc.aurora.dev/getting-started/what-is-aurora
+  aid: aurora:aurora-json-rpc-api
+
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
-  pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  date: '2026-10-20'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v5
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-10-20'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    Aurora documents an Ethereum-compatible JSON-RPC surface at doc.aurora.dev (mainnet.aurora.dev answers eth_chainId with 200) but publishes no OpenRPC or OpenAPI contract, and doc.aurora.dev/llms.txt returns 404.
+  evidence:
+  - url: https://aurora.dev/
+    status: 200
+  - url: https://doc.aurora.dev/llms.txt
+    status: 404
